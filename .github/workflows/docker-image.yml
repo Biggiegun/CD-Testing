@@ -19,4 +19,4 @@ jobs:
     - name: Newman Testing
       run: |
         collectionPath="/home/runner/work/CD-Testing/CD-Testing"
-        docker run -v $collectionPath:/etc/newman -t postman/newman:latest run "/CD-Testing/CD-Testing.postman_collection.json" --reporters="cli"
+        docker run -v $collectionPath:/etc/newman -t postman/newman:latest run "CD-Testing.postman_collection.json" --reporters="cli"
