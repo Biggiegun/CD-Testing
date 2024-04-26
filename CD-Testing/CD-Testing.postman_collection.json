@@ -26,7 +26,7 @@
 							"pm.test(\"Response should have a length of 10\", function () {\r",
 							"    resp = pm.response.json()\r",
 							"    var m = resp.length\r",
-							"    pm.expect(m).to.eql(11);\r",
+							"    pm.expect(m).to.eql(18);\r",
 							"})\r",
 							"\r",
 							"pm.test(\"response contains an id\", function () {\r",
