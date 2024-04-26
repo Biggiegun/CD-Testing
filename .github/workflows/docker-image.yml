@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "cd-testing" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "cd-testing" ]
 
 jobs:
 
@@ -14,5 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Generic Docker installation
+      run: docker-practice/actions-setup-docker@master
+    - name: Newman Testing
+      run: collectionPath ="/home/runner/work/CD-Testing/CD-Testing/CD-Testing:"
+      run: docker run -v $collectionPath/etc/newman -t postman/newman:latest run "CD-Testing.postman_collection.json" --reporters="cli"
