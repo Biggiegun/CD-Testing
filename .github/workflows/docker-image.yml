@@ -17,6 +17,5 @@ jobs:
     - name: Generic Docker installation
       uses: docker-practice/actions-setup-docker@master
     - name: Newman Testing
-      run: |
-        collectionPath ="/home/runner/work/CD-Testing/CD-Testing/CD-Testing"
-        docker run -v $collectionPath:/etc/newman -t postman/newman:latest run "CD-Testing.postman_collection.json" --reporters="cli"
+      run: collectionPath ="/home/runner/work/CD-Testing/CD-Testing/CD-Testing"
+      #docker run -v $collectionPath:/etc/newman -t postman/newman:latest run "CD-Testing.postman_collection.json" --reporters="cli"
